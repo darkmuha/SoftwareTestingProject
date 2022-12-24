@@ -1,9 +1,13 @@
-import org.openqa.selenium.*;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
 import pages.*;
 
 public class helper_method {
 
   Homepage home = new Homepage();
+  Search_Bar search = new Search_Bar();
   LoginPage login = new LoginPage();
   FirstProductpage firstProductPage = new FirstProductpage();
   SecondProductPage secondProductPage = new SecondProductPage();
@@ -14,6 +18,7 @@ public class helper_method {
   AddressBook addressBook = new AddressBook();
   MyAccountPage myPage = new MyAccountPage();
   EditAddress editAddress = new EditAddress();
+  ReviewPage review = new ReviewPage();
 
   void clickFirstAddToCart(WebDriver driver) {
     home.getFirstAddToCart(driver).click();
@@ -23,10 +28,41 @@ public class helper_method {
     home.getSecondAddToCart(driver).click();
   }
 
+  void Searchbar(WebDriver driver) {
+    search.getSearchbar(driver).click();
+  }
+
+  void SearchbarTxt(WebDriver driver) {
+    search.getSearchbarTxt(driver).sendKeys("swimsuit");
+
+  }
+
+  void SearchbarColourTxt(WebDriver driver) {
+    search.getSearchbarColourTxt(driver).sendKeys("teal");
+  }
+
+  void SearchXBtn(WebDriver driver) {
+    search.getSearchXBtn(driver).click();
+  }
+
+  void SearchbarRecomendation(WebDriver driver) {
+    search.getSearchbarRecomendation(driver).click();
+  }
+
+  void SearchBarClear(WebDriver driver) {
+    search.getSearchbarClear(driver).clear();
+  }
+
   void scrollToHomePageProducts(WebDriver driver) {
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
     js.executeScript("window.scrollBy(0, 540)");
+  }
+
+  void generalScroll(WebDriver driver) {
+    JavascriptExecutor js1 = (JavascriptExecutor) driver;
+
+    js1.executeScript("window.scroll(0,150)");
   }
 
   void selectFirstProductFirstSize(WebDriver driver) {
@@ -107,20 +143,16 @@ public class helper_method {
   double calculateOrderTotal(WebDriver driver) {
     double CalculatedOrderTotal = 0.0;
     for (int i = 0; i < checkout.getItemsQuantity(driver).size(); i++) {
-      CalculatedOrderTotal +=
-        Double.parseDouble(
-          checkout.getItemsQuantity(driver).get(i).getAttribute("value")
-        ) *
-        Double.parseDouble(
-          checkout
-            .getSubTotals(driver)
-            .get(i)
-            .getText()
-            .substring(
-              1,
-              checkout.getSubTotals(driver).get(i).getText().length()
-            )
-        );
+      CalculatedOrderTotal += Double.parseDouble(
+          checkout.getItemsQuantity(driver).get(i).getAttribute("value")) *
+          Double.parseDouble(
+              checkout
+                  .getSubTotals(driver)
+                  .get(i)
+                  .getText()
+                  .substring(
+                      1,
+                      checkout.getSubTotals(driver).get(i).getText().length()));
     }
     return CalculatedOrderTotal;
   }
@@ -131,8 +163,8 @@ public class helper_method {
 
   void selectTaxCountryDropDown(WebDriver driver) {
     checkout
-      .getDropDownForCountry(driver)
-      .selectByVisibleText("Bosnia & Herzegovina");
+        .getDropDownForCountry(driver)
+        .selectByVisibleText("Bosnia & Herzegovina");
   }
 
   void fillTaxState(WebDriver driver) {
@@ -149,24 +181,22 @@ public class helper_method {
 
   double getShippingAndTaxesDouble(WebDriver driver) {
     return Double.parseDouble(
-      checkout
-        .getShippingAndTaxes(driver)
-        .getText()
-        .substring(1, checkout.getShippingAndTaxes(driver).getText().length())
-    );
+        checkout
+            .getShippingAndTaxes(driver)
+            .getText()
+            .substring(1, checkout.getShippingAndTaxes(driver).getText().length()));
   }
 
   double getOrderTotalDouble(WebDriver driver) {
     return Double.parseDouble(
-      checkout
-        .getOrderTotal(driver)
-        .getText()
-        .substring(1, checkout.getOrderTotal(driver).getText().length())
-    );
+        checkout
+            .getOrderTotal(driver)
+            .getText()
+            .substring(1, checkout.getOrderTotal(driver).getText().length()));
   }
 
   void fillEmail(WebDriver driver) {
-    shipping.getInputForEmail(driver).sendKeys("45malsi2108@gmail.com");
+    shipping.getInputForEmail(driver).sendKeys("darkmuha10@gmail.com");
   }
 
   void fillFirstName(WebDriver driver) {
@@ -203,6 +233,14 @@ public class helper_method {
 
   void selectPaypal(WebDriver driver) {
     pay.getPaypal(driver).click();
+  }
+
+  void selectCredit(WebDriver driver) {
+    pay.getCredit(driver).click();
+  }
+
+  void selectAlipay(WebDriver driver) {
+    pay.getAlipay(driver).click();
   }
 
   void clickAddressBook(WebDriver driver) {
@@ -285,4 +323,29 @@ public class helper_method {
     fillPassword(driver);
     clickOnSignIn(driver);
   }
+
+  public void ReviewBtn(WebDriver driver) {
+    review.getReviewBtn(driver).click();
+  }
+
+  public void Quality(WebDriver driver) {
+    review.getQuality(driver).click();
+  }
+
+  public void NickNameTxt(WebDriver driver) {
+    review.getNickName(driver).sendKeys("koh");
+  }
+
+  public void SummaryTxt(WebDriver driver) {
+    review.getSummary(driver).sendKeys("good product");
+  }
+
+  public void ReviewTxt(WebDriver driver) {
+    review.getReview(driver).sendKeys("product is well designed for all levels of swimmers");
+  }
+
+  public void SubmitReviewBtn(WebDriver driver) {
+    review.getSubmitReviewBtn(driver).click();
+  }
+
 }
