@@ -232,9 +232,6 @@ public class helper_method {
     shipping.getNextButton(driver).click();
   }
 
- 
- 
-
   void LoginfillStreetAddress(WebDriver driver) {
     Loginshipping.getInputForStreetAddress(driver).sendKeys("Address 123");
   }
@@ -259,7 +256,6 @@ public class helper_method {
     Loginshipping.getNextButton(driver).click();
   }
 
-
   void selectPaypal(WebDriver driver) {
     pay.getPaypal(driver).click();
   }
@@ -281,7 +277,7 @@ public class helper_method {
   }
 
   void fillNewFirstName(WebDriver driver) {
-    editAddress.getInputForFirstName(driver).clear();
+    // editAddress.getInputForFirstName(driver).clear();
     editAddress.getInputForFirstName(driver).sendKeys("NewName");
   }
 
@@ -291,6 +287,8 @@ public class helper_method {
   }
 
   void fillNewStreetAddress(WebDriver driver) {
+
+    editAddress.getInputForStreetAddress(driver).click();
     editAddress.getInputForStreetAddress(driver).clear();
     editAddress.getInputForStreetAddress(driver).sendKeys("Address321");
   }

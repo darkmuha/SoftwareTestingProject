@@ -22,6 +22,7 @@ public class test_change_billing_address {
 
     help.clickChangeBillingAddress(driver);
 
+    Thread.sleep(3000);
     help.fillNewFirstName(driver);
     help.fillNewLastName(driver);
     help.fillNewStreetAddress(driver);
