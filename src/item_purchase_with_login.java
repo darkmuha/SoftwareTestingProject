@@ -29,17 +29,18 @@ public class item_purchase_with_login {
 
         Thread.sleep(10000);
         help.clickProceedToCheckOut(driver);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
         // help.fillEmail(driver);
         // help.fillFirstName(driver);
         // help.fillLastName(driver);
-        // help.fillStreetAddress(driver);
-        // help.selectDropDownForCountry(driver);
-        // help.fillCity(driver);
-        // help.fillPostalCode(driver);
-        // help.fillPhoneNumber(driver);
         help.generalScroll(driver);
+        help.LoginfillStreetAddress(driver);
+        help.LoginselectDropDownForCountry(driver);
+        help.LoginfillCity(driver);
+        help.LoginfillPostalCode(driver);
+        help.LoginfillPhoneNumber(driver);
+
         Thread.sleep(10000);
 
         help.clickNextInShipping(driver);

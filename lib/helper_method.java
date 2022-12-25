@@ -14,6 +14,7 @@ public class helper_method {
   NavBarItems nav = new NavBarItems();
   CheckOutPage checkout = new CheckOutPage();
   ShippingPage shipping = new ShippingPage();
+  LoginShippingPage Loginshipping = new LoginShippingPage();
   PaymentPage pay = new PaymentPage();
   AddressBook addressBook = new AddressBook();
   MyAccountPage myPage = new MyAccountPage();
@@ -196,15 +197,15 @@ public class helper_method {
   }
 
   void fillEmail(WebDriver driver) {
-    shipping.getInputForEmail(driver).sendKeys("darkmuha10@gmail.com");
+    shipping.getInputForEmail(driver).sendKeys("kohil.islam45@gmail.com");
   }
 
   void fillFirstName(WebDriver driver) {
-    shipping.getInputForFirstName(driver).sendKeys("Mohamad");
+    shipping.getInputForFirstName(driver).sendKeys("Moha");
   }
 
   void fillLastName(WebDriver driver) {
-    shipping.getInputForLastName(driver).sendKeys("Abdelrahman");
+    shipping.getInputForLastName(driver).sendKeys("koh");
   }
 
   void fillStreetAddress(WebDriver driver) {
@@ -220,7 +221,7 @@ public class helper_method {
   }
 
   void fillPostalCode(WebDriver driver) {
-    shipping.getInputForPostalCode(driver).sendKeys("123");
+    shipping.getInputForPostalCode(driver).sendKeys("12344");
   }
 
   void fillPhoneNumber(WebDriver driver) {
@@ -230,6 +231,34 @@ public class helper_method {
   void clickNextInShipping(WebDriver driver) {
     shipping.getNextButton(driver).click();
   }
+
+ 
+ 
+
+  void LoginfillStreetAddress(WebDriver driver) {
+    Loginshipping.getInputForStreetAddress(driver).sendKeys("Address 123");
+  }
+
+  void LoginselectDropDownForCountry(WebDriver driver) {
+    Loginshipping.getDropDownForCountry(driver).selectByVisibleText("Austria");
+  }
+
+  void LoginfillCity(WebDriver driver) {
+    Loginshipping.getInputForCity(driver).sendKeys("SomeAustrianCity");
+  }
+
+  void LoginfillPostalCode(WebDriver driver) {
+    Loginshipping.getInputForPostalCode(driver).sendKeys("12344");
+  }
+
+  void LoginfillPhoneNumber(WebDriver driver) {
+    Loginshipping.getInputForPhoneNumber(driver).sendKeys("06442143512");
+  }
+
+  void LoginclickNextInShipping(WebDriver driver) {
+    Loginshipping.getNextButton(driver).click();
+  }
+
 
   void selectPaypal(WebDriver driver) {
     pay.getPaypal(driver).click();
