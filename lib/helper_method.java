@@ -20,6 +20,11 @@ public class helper_method {
   MyAccountPage myPage = new MyAccountPage();
   EditAddress editAddress = new EditAddress();
   ReviewPage review = new ReviewPage();
+  AddressVerification addressVerification = new AddressVerification();
+  ScrollDown scrollDown = new ScrollDown();
+  ChangePassword changePassword = new ChangePassword();
+  CreateAccountpage createAccountpage = new CreateAccountpage();
+
 
   void clickFirstAddToCart(WebDriver driver) {
     home.getFirstAddToCart(driver).click();
@@ -374,5 +379,103 @@ public class helper_method {
   public void SubmitReviewBtn(WebDriver driver) {
     review.getSubmitReviewBtn(driver).click();
   }
+  
+  //Address Verification
+  void sizeBox(WebDriver driver) {
+    addressVerification.getsizeBox(driver).click();
+  }
+
+  void ProceedToCheckout(WebDriver driver) {
+    addressVerification.getProceedToCheckout(driver).click();
+  }
+
+  void emailAddressElement(WebDriver driver) {
+    addressVerification.getemailAddressElement(driver).click();
+  }
+
+  void firstNameField(WebDriver driver) {
+    addressVerification.getfirstNameField(driver).sendKeys("Chinnu");
+  }
+
+  void lastNameField(WebDriver driver) {
+    addressVerification.getlastNameField(driver).sendKeys("P");
+  }
+
+  void streetAddress(WebDriver driver) {
+    addressVerification.getstreetAddress(driver).click();
+  }
+
+  void countrySelect(WebDriver driver) {
+    ((Select) addressVerification.getcountrySelect(driver)).selectByVisibleText("United States");
+  }
+
+  void cityField(WebDriver driver) {
+    addressVerification.getcityField(driver).sendKeys("New York");
+  }
+
+  void stateField(WebDriver driver) {
+    addressVerification.getstateField(driver).sendKeys("NY");
+  }
+
+  void zipCodeField(WebDriver driver) {
+    addressVerification.getzipCodeField(driver).sendKeys("10001");
+  }
+
+  void radioButton(WebDriver driver) {
+    addressVerification.getradioButton(driver).click();
+  }
+
+  void phoneNumberField(WebDriver driver) {
+    addressVerification.getphoneNumberField(driver).sendKeys("+123 456 789");
+  }
+  
+  void nextButton(WebDriver driver) {
+    addressVerification.getnextButton(driver).click();
+  }
+
+//Change Password
+  void emailField(WebDriver driver) {
+    changePassword.getemailField(driver).sendKeys("chinnu@gmail.com");
+  }
+  void passwordField(WebDriver driver) {
+    changePassword.getpasswordField(driver).sendKeys("riya!123");
+  }
+  void SaveButton(WebDriver driver) {
+    changePassword.getsaveButton(driver).click();
+  }
+  void currentPasswordField(WebDriver driver) {
+    changePassword.getcurrentPasswordField(driver).sendKeys("riya!123");
+  }
+  void newPasswordField(WebDriver driver) {
+    changePassword.getnewPasswordField(driver).sendKeys("Riya@123");
+  }
+  void confirmPassword(WebDriver driver) {
+    changePassword.getconfirmPassword(driver).sendKeys("Riya@123");
+  }
+  void saveButton(WebDriver driver) {
+    changePassword.getsaveButton(driver).click();
+  }
+
+  //Create Account Page
+  void FirstnameField(WebDriver driver) {
+    createAccountpage.getFirstnameField(driver).sendKeys("Chinnu");
+  }
+  void LastnameField(WebDriver driver) {
+    createAccountpage.getLastnameField(driver).sendKeys("P");
+  }
+  void confirmPasswordField(WebDriver driver) {
+    createAccountpage.getconfirmPasswordField(driver).sendKeys("riya!123");
+  }
+  void password(WebDriver driver) {
+    createAccountpage.getpassword(driver).sendKeys("riya!123");
+  }
+  void email(WebDriver driver) {
+    createAccountpage.getemail(driver).sendKeys("chinnu@gmail.com");
+  }
+  void createAccountButton(WebDriver driver) {
+    createAccountpage.getcreateAccountButton(driver).click();
+  }
 
 }
+
+
