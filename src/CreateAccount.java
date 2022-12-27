@@ -22,10 +22,10 @@ public class CreateAccount {
       emailField.sendKeys("Aishu@gmail.com");
 
       WebElement passwordField = driver.findElement(By.id("password"));
-      passwordField.sendKeys("Riya@123");
+      passwordField.sendKeys("aishu@123");
 
       WebElement confirmPasswordField = driver.findElement(By.id("password-confirmation"));
-      confirmPasswordField.sendKeys("Riya@123");
+      confirmPasswordField.sendKeys("aishu@123");
 
       // Click the "Create Account" button
       WebElement createAccountButton = driver.findElement(By.id("send2"));
