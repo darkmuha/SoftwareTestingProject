@@ -15,8 +15,8 @@ public class Change_Password {
         // Find the username and password elements and enter the login credentials
         WebElement emailElement = driver.findElement(By.id("email"));
         WebElement passwordElement = driver.findElement(By.id("pass"));
-        emailElement.sendKeys("soundhu@gmail.com");
-        passwordElement.sendKeys("Riya@123");
+        emailElement.sendKeys("Aishu@gmail.com");
+        passwordElement.sendKeys("aishu@123");
 
         // Find the login button and click it
         WebElement signinButton = driver.findElement(By.id("send2"));
@@ -27,7 +27,7 @@ public class Change_Password {
         driver.get("https://www.proswimwear.co.uk/customer/account/edit/changepass/1/");
 
         WebElement currentPasswordField = driver.findElement(By.id("current-password"));
-        currentPasswordField.sendKeys("riya!123");
+        currentPasswordField.sendKeys("aishu@123");
 
         WebElement newPasswordField = driver.findElement(By.id("password"));
         newPasswordField.sendKeys("Riya@123");
